@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Block UI 6 - Social Stats</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .social-cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            color: white;
+            border-radius: 4px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card i {
+            font-size: 60px;
+        }
+
+        .card .name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card .count {
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 4px;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #00aced;
+        }
+
+        .google-plus {
+            background-color: #dd4b39;
+        }
+
+        .pinterest {
+            background-color: #cb2027;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="social-cards">
+        <div class="card facebook">
+            <i class="fab fa-facebook-f"></i>
+            <div>
+                <div class="name">Facebook</div>
+                <div class="count">5,00,000 Likes</div>
+            </div>
+        </div>
+
+        <div class="card twitter">
+            <i class="fab fa-twitter"></i>
+            <div>
+                <div class="name">Twitter</div>
+                <div class="count">40,000 Tweets</div>
+            </div>
+        </div>
+
+        <div class="card google-plus">
+            <i class="fab fa-google-plus-g"></i>
+            <div>
+                <div class="name">Google +</div>
+                <div class="count">4,60,000 Plus</div>
+            </div>
+        </div>
+
+        <div class="card pinterest">
+            <i class="fab fa-pinterest-p"></i>
+            <div>
+                <div class="name">Pinterest</div>
+                <div class="count">34,000 Pins</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

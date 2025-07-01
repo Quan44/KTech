@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Block UI 8</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f1f7fc;
+      font-family: 'Roboto', sans-serif;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .skill-card {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      width: 500px;
+    }
+
+    .skill {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 15px;
+      font-size: 16px;
+    }
+
+    .skill-name {
+      width: 60px;
+      font-weight: 600;
+      color: #333;
+      margin-right: 10px;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 8px;
+      background-color: #eee;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+    }
+
+    /* Color Classes */
+    .html {
+      background-color: #4CAF50;
+      width: 60%;
+    }
+
+    .css {
+      background-color: #F44336;
+      width: 50%;
+    }
+
+    .php {
+      background-color: #03A9F4;
+      width: 30%;
+    }
+
+    .java {
+      background-color: #FFC107;
+      width: 70%;
+    }
+
+    .net {
+      background-color: #9C27B0;
+      width: 40%;
+    }
+
+    .icon-html {
+      background-color: #4CAF50;
+    }
+
+    .icon-css {
+      background-color: #F44336;
+    }
+
+    .icon-php {
+      background-color: #03A9F4;
+    }
+
+    .icon-java {
+      background-color: #FFC107;
+    }
+
+    .icon-net {
+      background-color: #9C27B0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="skill-card">
+    <div class="skill">
+      <div class="icon icon-html"><i class="fab fa-html5"></i></div>
+      <div class="skill-name">HTML</div>
+      <div class="progress-bar">
+        <div class="progress-fill html"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="icon icon-css"><i class="fab fa-css3-alt"></i></div>
+      <div class="skill-name">CSS</div>
+      <div class="progress-bar">
+        <div class="progress-fill css"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="icon icon-php"><i class="fab fa-php"></i></div>
+      <div class="skill-name">PHP</div>
+      <div class="progress-bar">
+        <div class="progress-fill php"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="icon icon-java"><i class="fab fa-java"></i></div>
+      <div class="skill-name">Java</div>
+      <div class="progress-bar">
+        <div class="progress-fill java"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="icon icon-net"><i class="fab fa-microsoft"></i></div>
+      <div class="skill-name">.Net</div>
+      <div class="progress-bar">
+        <div class="progress-fill net"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

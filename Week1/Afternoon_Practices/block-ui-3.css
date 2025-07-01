@@ -1,0 +1,133 @@
+:root {
+    --container-width: 540px;
+    --font-family: 'Roboto', sans-serif;
+    --font-size: 13px;
+    --font-weight-bold: 700;
+    --color-white: #ffffff;
+    --color-gray: #908d8deb;
+    --color-background: #ecf0f1;
+    --spacing: 16px;
+    --block-height: 54px;
+    --label-width: 160px;
+    --spacing-bottom: 16px;
+    --witdh-card: 220px;
+
+
+    /* COLOR CHART*/
+    --mon-color: #F75354;
+    --mon-percent: 30%;
+    --tue-color: #4DD662;
+    --tue-percent: 20%;
+    --wed-color: #FCD318;
+    --wed-percent: 60%;
+    --thu-color: #31C8DD;
+    --thu-percent: 70%;
+    --fri-color: #F78153;
+    --fri-percent: 50%;
+}
+
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f4f8;
+    margin: 40px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: var(--witdh-card);
+    text-align: center;
+}
+
+.card h4 {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 10px;
+    color: var(--color-gray);
+}
+
+.card .value {
+    font-size: 28px;
+    color: #00bcd4;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 10px 0 15px;
+    width: 100%;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 60px;
+}
+
+.bar {
+    width: 10px;
+    height: 100%;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.bar-fill {
+    width: 100%;
+}
+
+/* Màu và chiều cao cụ thể cho từng ngày */
+.bar-fill.mon {
+    height: var(--mon-percent);
+    background-color: #f44336;
+}
+
+.bar-fill.tue {
+    height: var(--tue-percent);
+    background-color: #4caf50;
+}
+
+.bar-fill.wed {
+    height: var(--wed-percent);
+    background-color: #ffeb3b;
+}
+
+.bar-fill.thu {
+    height: var(--thu-percent);
+    background-color: #03a9f4;
+}
+
+.bar-fill.fri {
+    height: var(--fri-percent);
+    background-color: #ff5722;
+}
+
+.day-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 6px;
+}
+
+.day-label {
+    font-size: 10px;
+    color: #666;
+    margin-top: 6px;
+    text-align: center;
+    padding: 0 0 10px;
+}

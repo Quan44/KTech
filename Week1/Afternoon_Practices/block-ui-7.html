@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Block UI 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .process-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .step .label {
+            font-size: 16px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Specific Colors */
+        .idea {
+            background-color: #f44336;
+        }
+
+        .prototype {
+            background-color: #03a9f4;
+        }
+
+        .coding {
+            background-color: #4caf50;
+        }
+
+        .testing {
+            background-color: #ab47bc;
+        }
+
+        .arrow {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .process-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="process-container">
+        <div class="step">
+            <div class="circle idea">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="label">Idea</div>
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="step">
+            <div class="circle prototype">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <div class="label">Prototype</div>
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="step">
+            <div class="circle coding">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="label">Coding</div>
+        </div>
+
+        <div class="arrow">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+
+        <div class="step">
+            <div class="circle testing">
+                <i class="fas fa-check-square"></i>
+            </div>
+            <div class="label">Testing</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

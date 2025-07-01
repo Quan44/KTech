@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block UI 5</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --block-height: 50px;
+            --font-family: 'Roboto', sans-serif;
+            --font-size: 13px;
+            --font-weight-bold: 700;
+            --color-white: #ffffff;
+            --color-gray: #908d8deb;
+            --color-background: #ecf0f1;
+            --spacing: 16px;
+            --block-height: 54px;
+            --label-width: 160px;
+            --spacing-bottom: 16px;
+            --witdh-card: 220px;
+
+
+            /* COLOR BLOCK*/
+            --home-color: #31C8DD;
+            --about-color: #F75354;
+            --feature-color: #51D567;
+            --service-color: #FCD518;
+            --gallery-color: #F78153;
+            --blog-color: #FE60E8;
+        }
+
+        .container {
+            width: 100%;
+            height: var(--block-height);
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .home {
+            background-color: var(--home-color);
+            height: var(--block-height);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--about-color);
+            width: 100%;
+            height: var(--block-height);
+        }
+
+        .feature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--feature-color);
+            width: 100%;
+            height: var(--block-height);
+        }
+
+        .service {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--service-color);
+            width: 100%;
+            height: var(--block-height);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--gallery-color);
+            width: 100%;
+            height: var(--block-height);
+        }
+
+        .blog {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--blog-color);
+            width: 100%;
+            height: var(--block-height);
+        }
+
+        span {
+            font-family: var(--font-family);
+            font-size: var(--font-size);
+            text-transform: uppercase;
+            color: var(--color-white);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="home">
+            <span>home</span>
+        </div>
+        <div class="about">
+            <span>about</span>
+        </div>
+        <div class="feature">
+            <span>feature</span>
+        </div>
+        <div class="service">
+            <span>service</span>
+        </div>
+        <div class="gallery">
+            <span>gallery</span>
+        </div>
+        <div class="blog">
+            <span>blog</span>
+        </div>
+    </div>
+</body>
+
+</html>
