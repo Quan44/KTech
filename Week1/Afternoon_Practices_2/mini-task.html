@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Change Text Content of a Div</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-10">
+        <!-- 1. Change Text Content of a Div -->
+        <h1 class="text-3xl font-bold">1. Change Text Content of a Div</h1>
+        <div id="textDisplay" class="text-2xl font-bold">
+            Hello world!
+        </div>
+        <button id="changeTextBtn" class="bg-blue-600 mb-8 text-white p-5 rounded-md">Change Text</button>
+        <script>
+            const changeTextBtn = document.getElementById("changeTextBtn");
+            const textDisplay = document.getElementById("textDisplay");
+
+            changeTextBtn.addEventListener('click', () => {
+                textDisplay.textContent = "Hello, JavaScript!";
+                console.log("Ok");
+            });
+        </script>
+
+        <!-- 2. Toggle a CSS Class on an Element -->
+        <h1 class="text-3xl font-bold">2. Toggle a CSS Class on an Element</h1>
+        <div class="flex flex-col">
+            <div id="box" class="w-[100px] h-[30px] flex justify-center">This is a BOX</div>
+            <button id="toggleHighlightBtn" class="bg-blue-600 mb-8 w-[200px] text-white p-5 rounded-md">Highlight
+                Button</button>
+        </div>
+        <script>
+            const toggleHighlightBtn = document.getElementById("toggleHighlightBtn");
+            const toggleBox = document.getElementById("box");
+
+            toggleHighlightBtn.addEventListener('click', () => {
+                toggleBox.classList.toggle('highlight');
+            });
+        </script>
+
+        <!-- 3. Add New List Item -->
+        <h1 class="text-3xl font-bold">3. Add New List Item</h1>
+        <input id="itemInput" class="w-[200px] border p-2 rounded w-64 mb-2" type="text">
+        <button id="addItemBtn" class="bg-blue-600 text-white p-5 w-[200px] rounded-md">Add</button>
+        <ul id="list" class="list-disc"></ul>
+        <script>
+            const addItemBtn = document.getElementById("addItemBtn");
+            const itemInput = document.getElementById("itemInput");
+            const list = document.getElementById("list");
+
+            addItemBtn.addEventListener('click', () => {
+                const newtext = itemInput.value.trim();
+                const newItem = document.createElement("li");
+                newItem.textContent = newtext;
+                list.appendChild(newItem);
+                itemInput.value = '';
+            });
+        </script>
+
+        <!-- 4. Add New List Item -->
+        <h1 class="text-3xl mt-8 font-bold">4. Add New List Item</h1>
+        <label for="itemInput" class="text-black text-3xl flex justify-center w-[200px] rounded-md">List</label>
+        <ul id="list" class="list-disc flex flex-col gap-5">
+            <li>Item 1 <button class="deleteBtn w-[100px] bg-red-300">Delete</button></li>
+            <li>Item 2 <button class="deleteBtn w-[100px] bg-red-300">Delete</button></li>
+            <li>Item 3 <button class="deleteBtn w-[100px] bg-red-300">Delete</button></li>
+            <li>Item 4 <button class="deleteBtn w-[100px] bg-red-300">Delete</button></li>
+        </ul>
+        <script>
+            const deleteBtn = document.querySelectorAll(".deleteBtn");
+            deleteBtn.forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    const list = event.target.parentElement;
+                    list.remove();
+                });
+                console.log("Ok");
+            });
+        </script>
+
+        <!-- 5. Update Image Source Dynamically -->
+        <h1 class="text-3xl mt-8 font-bold">5. Update Image Source Dynamically</h1>
+        <button id="changeImageBtn" class="bg-blue-600 text-white p-5 w-[200px] rounded-md">Update Img Source</button>
+        <img id="mainImage" src="https://img.hoidap247.com/picture/question/20200508/large_1588936738888.jpg?v=0"
+            class="w-[200px] h-auto" alt="">
+        <script>
+            const changeImageBtn = document.getElementById("changeImageBtn");
+            const mainImage = document.getElementById("mainImage");
+            changeImageBtn.addEventListener('click', () => {
+                mainImage.src = "https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/482528IAX/anh-mo-ta.png";
+            });
+        </script>
+
+        <!-- 6. Get Input Value -->
+        <h1 class="text-3xl mt-8 font-bold">6. Get Input Value</h1>
+        <input id="usernameInput" class="p-2 rounded-md bg-blue-100" type="text">
+        <button id="submitUsername" class="bg-blue-600 text-white p-5 w-[200px] rounded-md">Click</button>
+        <script>
+            const usernameInput = document.getElementById("usernameInput");
+            const submitUsername = document.getElementById("submitUsername");
+
+            submitUsername.addEventListener('click', () => {
+                alert(usernameInput.value);
+            });
+        </script>
+
+        <!-- 7. Event Listener on Multiple Elements -->
+        <h1 class="text-3xl mt-8 font-bold">7. Event Listener on Multiple Elements</h1>
+        <button class="colorBtn bg-red-300 text-white p-5 w-[200px] rounded-md">Red</button>
+        <button class="colorBtn bg-blue-600 text-white p-5 w-[200px] rounded-md">Blue</button>
+        <button class="colorBtn bg-orange-600 text-white p-5 w-[200px] rounded-md">Orange</button>
+        <button class="colorBtn bg-purple-600 text-white p-5 w-[200px] rounded-md">Purple</button>
+        <script>
+            const colorBtn = document.querySelectorAll(".colorBtn");
+            colorBtn.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    alert(btn.textContent);
+                })
+            });
+        </script>
+
+        <!-- 8.Change Background on Hover -->
+        <h1 class="text-3xl mt-8 font-bold">8.Change Background on Hover</h1>
+        <div class="hoverBox text-white text-2xl w-[200px] h-[200px] bg-stone-300 flex items-center justify-center">
+            Hover over me
+        </div>
+        <script>
+            const box = document.querySelector('.hoverBox');
+
+            box.addEventListener('mouseenter', () => {
+                box.style.backgroundColor = 'lightblue';
+            });
+
+            box.addEventListener('mouseleave', () => {
+                box.style.backgroundColor = 'lightgray';
+            });
+        </script>
+        <!-- 9. Live Clock -->
+        <h1 class="text-3xl mt-8 font-bold">9. Live Clock</h1>
+        <p id="clockDisplay" class="text-4xl font-mono text-blue-600 my-4"></p>
+        <script>
+            function updateClock() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                const timeString = `${hours}:${minutes}:${seconds}`;
+                document.getElementById('clockDisplay').textContent = timeString;
+            }
+
+            setInterval(updateClock, 1000);
+            updateClock(); // Initial call to display clock immediately
+        </script>
+
+        <!-- 10. Validate Form Field -->
+        <h1 class="text-3xl mt-8 font-bold">10. Validate Form Field</h1>
+        <input id="emailInput" type="text" placeholder="Enter your email" class="border p-2 rounded w-64 mb-2" />
+        <button id="validateBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Validate Email</button>
+        <p id="errorMessage" class="text-red-500 mt-2"></p>
+        <script>
+            // Email validation logic
+            document.getElementById('validateBtn').addEventListener('click', function () {
+                const email = document.getElementById('emailInput').value.trim();
+                const errorMessage = document.getElementById('errorMessage');
+                // Simple email regex
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    errorMessage.textContent = 'Please enter a valid email address.';
+                } else {
+                    errorMessage.textContent = '';
+                }
+            });
+        </script>
+
+        <!-- 11. Hide Element -->
+        <h1 class="text-3xl mt-8 font-bold">11. Hide Element</h1>
+        <button id="hideParaBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Hide Paragraph</button>
+        <p id="infoPara" class="mt-4">This is the paragraph to hide.</p>
+        <script>
+            document.getElementById('hideParaBtn').addEventListener('click', function () {
+                document.getElementById('infoPara').style.display = 'none';
+            });
+        </script>
+
+        <!-- 12. Greeting Based on Time -->
+        <h1 class="text-3xl mt-8 font-bold">12. Greeting Based on Time</h1>
+        <p id="greetingText" class="text-3xl font-semibold text-blue-700"></p>
+        <script>
+            function getGreeting() {
+                const hour = new Date().getHours();
+                if (hour >= 5 && hour < 12) {
+                    return 'Good Morning';
+                } else if (hour >= 12 && hour < 18) {
+                    return 'Good Afternoon';
+                } else if (hour >= 18 && hour < 22) {
+                    return 'Good Evening';
+                } else {
+                    return 'Good Night';
+                }
+            }
+            document.getElementById('greetingText').textContent = getGreeting();
+        </script>
+
+        <!-- 13. Field Border Highlight on Error -->
+        <h1 class="text-3xl mt-8 font-bold">13. Field Border Highlight on Error</h1>
+        <form id="nameForm" class="w-full max-w-xs">
+            <input id="nameInput" type="text" placeholder="Enter your name" class="border p-2 rounded w-full mb-2" />
+            <button id="formSubmit" type="submit"
+                class="bg-blue-500 text-white px-4 py-2 rounded w-full">Submit</button>
+            <p id="nameError" class="text-red-500 mt-2"></p>
+        </form>
+        <script>
+            document.getElementById('nameForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nameInput = document.getElementById('nameInput');
+                const nameError = document.getElementById('nameError');
+                if (nameInput.value.trim() === '') {
+                    nameInput.classList.add('border-red-500');
+                    nameError.textContent = 'Name is required.';
+                } else {
+                    nameInput.classList.remove('border-red-500');
+                    nameError.textContent = '';
+                }
+            });
+        </script>
+
+        <!-- 14. Disable Button After Click -->
+        <h1 class="text-3xl mt-8 font-bold">14. Disable Button After Click</h1>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded w-[400px]" id="onceBtn">Once Button</button>
+        <script>
+            document.getElementById('onceBtn').addEventListener('click', () => {
+                document.getElementById('onceBtn').style.display = 'none';
+            });
+        </script>
+
+        <!-- 15. Textarea Character Counter -->
+        <h1 class="text-3xl mt-8 font-bold">15. Textarea Character Counter</h1>
+        <textarea id="bioInput" maxlength="200" rows="4" class="border p-2 rounded w-full max-w-md mb-2"
+            placeholder="Write your bio (max 200 characters)"></textarea>
+        <p id="charCount" class="text-gray-600">200 characters remaining</p>
+        <script>
+            const bioInput = document.getElementById('bioInput');
+            const charCount = document.getElementById('charCount');
+            const maxChars = 200;
+            bioInput.addEventListener('input', () => {
+                const remaining = maxChars - bioInput.value.length;
+                charCount.textContent = `${remaining} characters remaining`;
+            });
+        </script>
+
+        <!-- 16. Add Colored Boxes -->
+        <h1 class="text-3xl mt-8 font-bold">16. Add Colored Boxes</h1>
+        <button id="addBoxBtn" class="bg-blue-500 ml-4 text-white px-4 py-2 rounded w-[370px] h-[50px] mb-4">Add
+            Box</button>
+        <div id="boxContainer" class="flex flex-wrap gap-3 w-[400px] justify-center"></div>
+        <script>
+            const addBoxBtn = document.getElementById('addBoxBtn');
+            const boxContainer = document.getElementById('boxContainer');
+            const colors = ['bg-red-400', 'bg-green-400', 'bg-yellow-400', 'bg-purple-400', 'bg-pink-400', 'bg-blue-400', 'bg-orange-400'];
+            addBoxBtn.addEventListener('click', () => {
+                const box = document.createElement('div');
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                box.className = `${color} w-16 h-16 rounded shadow`;
+                boxContainer.appendChild(box);
+            });
+        </script>
+
+        <!-- 17. Strike Through Completed Items -->
+        <h1 class="text-3xl mt-8 font-bold">17. Strike Through Completed Items</h1>
+        <ul>
+            <li id="todoList"
+                class="bg-blue-500 flex items-center justify-center text-white px-4 py-2 rounded w-[100px] h-[50px] mb-4">
+                Task 1</li>
+            <li id="todoList"
+                class="bg-blue-500 flex items-center justify-center text-white px-4 py-2 rounded w-[100px] h-[50px] mb-4">
+                Task 2</li>
+            <li id="todoList"
+                class="bg-blue-500 flex items-center justify-center text-white px-4 py-2 rounded w-[100px] h-[50px] mb-4">
+                Task 3</li>
+        </ul>
+        <script>
+            const todoItems = document.querySelectorAll('#todoList');
+
+            todoItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('line-through');
+                });
+            });
+        </script>
+
+        <!-- 18. Show/Hide Password -->
+        <h1 class="text-3xl mt-8 font-bold">18. Show/Hide Password</h1>
+        <input type="password" id="passwordInput" class="border p-2 rounded w-64 mb-2" placeholder="Enter password" />
+        <label class="flex items-center gap-2">
+            <input type="checkbox" id="togglePassword" />
+            <span>Show Password</span>
+        </label>
+        <script>
+            const passwordInput = document.getElementById('passwordInput');
+            const togglePassword = document.getElementById('togglePassword');
+            togglePassword.addEventListener('change', (event) => {
+                passwordInput.type = event.target.checked ? 'text' : 'password';
+            });
+        </script>
+
+        <!-- 19. Count Checked Checkboxes -->
+        <h1 class="text-3xl mt-8 font-bold">19. Count Checked Checkboxes</h1>
+        <div class="flex flex-col gap-2 mb-4">
+            <label><input type="checkbox" class="optionBox mr-2"> Option 1</label>
+            <label><input type="checkbox" class="optionBox mr-2"> Option 2</label>
+            <label><input type="checkbox" class="optionBox mr-2"> Option 3</label>
+        </div>
+        <p id="checkedCount" class="text-blue-600 text-lg">Checked: 0</p>
+        <script>
+            const checkboxes = document.querySelectorAll('.optionBox');
+            const checkedCount = document.getElementById('checkedCount');
+
+            checkboxes.forEach(cb => cb.addEventListener('change', () => {
+                const count = Array.from(checkboxes).filter(cb => cb.checked).length;
+                checkedCount.textContent = `Checked: ${count}`;
+            }));
+        </script>
+
+        <!-- 20. Image Gallery with Thumbnails -->
+        <h1 class="text-3xl mt-8 font-bold">20. Image Gallery with Thumbnails</h1>
+
+        <img id="mainPhoto" src="img/thumbnail1.jpg" alt="Main"
+            class="w-[400px] h-[250px] object-cover rounded shadow mb-4 border-4 border-blue-300">
+        <div class="flex gap-3">
+            <img src="img/thumbnail1.jpg"
+                class="thumbnail w-20 h-14 object-cover rounded border-2 border-blue-400 cursor-pointer" alt="Thumb1">
+            <img src="img/thumbnail2.jpg"
+                class="thumbnail w-20 h-14 object-cover rounded border-2 border-transparent cursor-pointer"
+                alt="Thumb2">
+            <img src="img/thumbnail3.jpg"
+                class="thumbnail w-20 h-14 object-cover rounded border-2 border-transparent cursor-pointer"
+                alt="Thumb3">
+        </div>
+        <script>
+            // Image gallery logic
+            const mainPhoto = document.getElementById('mainPhoto');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function () {
+                    mainPhoto.src = this.src;
+                    thumbnails.forEach(t => t.classList.remove('border-blue-400'));
+                    this.classList.add('border-blue-400');
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
