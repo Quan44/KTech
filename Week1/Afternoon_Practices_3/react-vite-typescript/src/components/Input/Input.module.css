@@ -1,0 +1,48 @@
+.inputWrapper {
+    background-color: #fff;
+    font-size: 17px;
+    color: #111;
+    padding: 0 24px;
+    display: flex;
+    width: 330px;
+    height: 51px;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input {
+    border: none;
+    outline: none;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.leftIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.rightIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.leftIcon,
+.rightIcon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colorIcon {
+    background-color: #FFE664;
+    border-radius: 50%;
+}
+
+.colorPhone {
+    background-color: #D3FFD8;
+    border-radius: 30%;
+}

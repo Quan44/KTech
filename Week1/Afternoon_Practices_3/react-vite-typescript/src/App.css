@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+}
+
+.wrapper {
+    width: 400px;
+    height: 1000px;
+    padding: 40px 35px;
+    background-color: #E2E9EE;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 24px;
+}

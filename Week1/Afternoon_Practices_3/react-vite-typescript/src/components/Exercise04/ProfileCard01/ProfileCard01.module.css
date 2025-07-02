@@ -1,0 +1,31 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    flex-grow: 1;
+    margin-left: 12px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: gray;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

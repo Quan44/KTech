@@ -1,0 +1,47 @@
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.center {
+    flex: 1;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: gray;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightImage {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.rightNode {
+    font-size: 18px;
+    margin-left: 8px;
+}

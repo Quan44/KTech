@@ -1,0 +1,51 @@
+.card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.image {
+    width: 30%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.name2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #111;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    background: #111;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.icon svg {
+    width: 27px;
+    height: 35px;
+}

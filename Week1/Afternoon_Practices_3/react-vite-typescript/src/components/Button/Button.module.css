@@ -1,0 +1,25 @@
+.button {
+    background-color: #111111;
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    border: none;
+    padding: 20px 24px;
+    display: flex;
+    min-width: 330px;
+    height: 60px;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+.button span{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.btn_outline{
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #111
+}

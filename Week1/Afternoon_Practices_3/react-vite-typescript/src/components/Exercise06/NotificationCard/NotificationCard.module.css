@@ -1,0 +1,39 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.message {
+    font-weight: 500;
+    font-size: 14px;
+    max-width: 60%;
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.badge {
+    background-color: black;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.devide {
+    width: 1px;
+    height: 20px;
+    background-color: #b8b8b8;
+}

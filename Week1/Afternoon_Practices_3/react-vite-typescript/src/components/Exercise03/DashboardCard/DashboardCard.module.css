@@ -1,0 +1,59 @@
+.tags {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+}
+
+.highlight {
+  background: #e5f9e7;
+  color: #259d4a;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.feeds {
+  background: #f5eaff;
+  color: #9d4adf;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.dots {
+  color: #666;
+}
+
+.title {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: #777;
+}
+
+.progressWrapper {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progressBar {
+  background: #eee;
+  height: 8px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.progress {
+  height: 100%;
+  background: #4caf50;
+  border-radius: 6px;
+}
+
+.percent {
+  text-align: right;
+  font-size: 12px;
+  color: #111;
+}
