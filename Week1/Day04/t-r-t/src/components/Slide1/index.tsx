@@ -64,8 +64,8 @@ export default function Slide1() {
                         key={img.src}
                         onClick={() => selectImage(idx)}
                         className={`border rounded p-1 bg-white transition
-              ${current === idx ? "border-orange-500" : "border-gray-200"}
-            `}
+                            ${current === idx ? "border-orange-500" : "border-gray-200"}
+                        `}
                     >
                         <img
                             src={img.src}
