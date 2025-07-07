@@ -1,0 +1,78 @@
+.card {
+    background: transparent;
+    color: #fff;
+    width: 420px;
+    padding: 0;
+    font-family: 'SF Pro Display', Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+.temp {
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-right: 0.2em;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-top: 8px;
+}
+
+.condition {
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 0.2em;
+    margin-bottom: 32px;
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+}
+
+.infoBoxes {
+    display: flex;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    padding: 24px 0 16px 0;
+    margin-top: 12px;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+}
+
+.label {
+    color: #6d7b8a;
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.value {
+    color: #222;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.08);
+    margin: 0 16px;
+    border-radius: 1px;
+}

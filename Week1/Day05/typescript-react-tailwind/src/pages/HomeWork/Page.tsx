@@ -1,4 +1,4 @@
-import Calculator from "@/components/Calculator/Calculator";
+import Calculator from "@/components/Calculator";
 import RegistrationForm from "@/components/RegistrationForm/RegistrationForm";
 import { FC } from "react";
 
