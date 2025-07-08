@@ -3,8 +3,11 @@ import { Route, Routes } from "react-router";
 import Layout from "@/components/Layout/Layout";
 import Home from "@/pages/Home/Page";
 import NoMatch from "@/pages/NoMatch/Page";
-import CRUDPage from "@/pages/CRUD/Page";
-import WheatherApp from "./pages/WheatherApp/Page";
+import Blog from "./pages/Blog/Page";
+import Category from "./pages/Category/Page";
+import Product from "./pages/Product/Page";
+import Login from "./pages/Login/Page";
+import Customer from "./pages/Customer/Page";
 // import Widget1 from "./pages/Widget1/page";
 // import Widget2 from "./pages/Widget2/page";
 // import Widget3 from "./pages/Widget3/page";
@@ -16,8 +19,11 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/CRUDPage" index element={<CRUDPage />} />
-          <Route path="/WheatherApp" index element={<WheatherApp />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/Category" element={<Category />} />
+          <Route path="/Product" element={<Product />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Customer" element={<Customer />} />
           {/* <Route path="/Widget1" element={<Widget1 />} />
           <Route path="/Widget2" element={<Widget2 />} />
           <Route path="/Widget3" element={<Widget3 />} />

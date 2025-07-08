@@ -1,10 +1,8 @@
 import { FC } from "react";
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import Layout from "@/components/Layout/Layout";
 import Home from "@/pages/Home/Page";
 import NoMatch from "@/pages/NoMatch/Page";
-import CRUDPage from "@/pages/CRUD/Page";
-import WheatherApp from "./pages/WheatherApp/Page";
 // import Widget1 from "./pages/Widget1/page";
 // import Widget2 from "./pages/Widget2/page";
 // import Widget3 from "./pages/Widget3/page";
@@ -16,8 +14,6 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/CRUDPage" index element={<CRUDPage />} />
-          <Route path="/WheatherApp" index element={<WheatherApp />} />
           {/* <Route path="/Widget1" element={<Widget1 />} />
           <Route path="/Widget2" element={<Widget2 />} />
           <Route path="/Widget3" element={<Widget3 />} />
