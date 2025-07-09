@@ -11,24 +11,19 @@ export default function Header() {
                 </Link>
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-x-4">
-                <Link to="/SignIn">
+                <Link to="/Form1">
                     <h1 className="text-sm   font-bold hover:text-primary transition-all duration-300">
-                        Form Sign in and Sign up
+                        Practices 1
                     </h1>
                 </Link>
-                <Link to="/Widget2">
+                <Link to="/Form2">
                     <h1 className="text-sm  font-bold hover:text-primary transition-all duration-300">
-                        Widget 2
+                        Practices 2
                     </h1>
                 </Link>
-                <Link to="/Widget3">
+                <Link to="/Form3">
                     <h1 className="text-sm  font-bold hover:text-primary transition-all duration-300">
-                        Widget 3
-                    </h1>
-                </Link>
-                <Link to="/Widget4">
-                    <h1 className="text-sm  font-bold hover:text-primary transition-all duration-300">
-                        Widget 4
+                        Practices 3
                     </h1>
                 </Link>
             </div>
