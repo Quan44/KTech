@@ -10,9 +10,11 @@ type Inputs = {
     email: string,
     password: string,
     confirmPassword: string,
-    checkbox1: boolean,
-    checkbox2: boolean,
+    newsletter: boolean,
+    agree: boolean,
 }
+
+const phoneRegExp = /^[0-9]{10,15}$/;
 
 const schema = yup
     .object({
@@ -27,7 +29,7 @@ const schema = yup
         phoneNumber: yup
             .string()
             .required("Phone number is required")
-            .matches(/^\d{10,15}$/, "Phone number must be 10 to 15 digits"),
+            .matches(phoneRegExp, "Phone number must be 10 to 15 digits"),
         email: yup.string().email("Email must be a valid email").required("Email is required"),
         password: yup
             .string()
@@ -42,8 +44,8 @@ const schema = yup
             .string()
             .oneOf([yup.ref("password")], "Passwords must match")
             .required("Confirm Password is required"),
-        checkbox1: yup.boolean().default(false),
-        checkbox2: yup
+        newsletter: yup.boolean().default(false),
+        agree: yup
             .boolean()
             .oneOf([true], "You must agree to the terms to proceed")
             .required("You must accept Terms")
@@ -55,9 +57,10 @@ const Form2: FC = () => {
         register,
         handleSubmit,
         reset,
-        formState: { errors },
+        formState: { errors, isValid },
     } = useForm<Inputs>({
         resolver: yupResolver(schema),
+        mode: "onChange",
     })
     const onSubmit = (data: Inputs) => {
         console.log(data);
@@ -99,7 +102,7 @@ const Form2: FC = () => {
                                                 placeholder="First Name"
                                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                            <p className="text-red-600">{errors.firstName?.message}</p>
+                                            {errors.firstName && <p className="text-red-600">{errors.firstName?.message}</p>}
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <label htmlFor="lasttName" className="text-sm font-medium text-gray-700">
@@ -111,7 +114,7 @@ const Form2: FC = () => {
                                                 placeholder="Last Name"
                                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                            <p className="text-red-600">{errors.lastName?.message}</p>
+                                            {errors.lastName && <p className="text-red-600">{errors.lastName?.message}</p>}
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <label htmlFor="phone" className="text-sm font-medium text-gray-700">
@@ -123,7 +126,7 @@ const Form2: FC = () => {
                                                 placeholder="Phone Number"
                                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                            <p className="text-red-600">{errors.phoneNumber?.message}</p>
+                                            {errors.phoneNumber && <p className="text-red-600">{errors.phoneNumber?.message}</p>}
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <label htmlFor="enail" className="text-sm font-medium text-gray-700">
@@ -135,7 +138,7 @@ const Form2: FC = () => {
                                                 placeholder="Email"
                                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                            <p className="text-red-600">{errors.email?.message}</p>
+                                            {errors.email &&<p className="text-red-600">{errors.email?.message}</p>}
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <label htmlFor="password" className="text-sm font-medium text-gray-700">
@@ -148,7 +151,7 @@ const Form2: FC = () => {
                                                 placeholder="Password"
                                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                            <p className="text-red-600">{errors.password?.message}</p>
+                                            {errors.password && <p className="text-red-600">{errors.password?.message}</p>}
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <label htmlFor="confirmPassword" className="text-sm font-medium text-gray-700">
@@ -161,17 +164,17 @@ const Form2: FC = () => {
                                                 placeholder="Confirm Password"
                                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             />
-                                            <p className="text-red-600">{errors.confirmPassword?.message}</p>
+                                            {errors.confirmPassword && <p className="text-red-600">{errors.confirmPassword?.message}</p>}
                                         </div>
                                     </div>
 
                                     <div className="space-y-2 text-sm">
                                         <label className="flex items-center gap-2">
-                                            <input type="checkbox" {...register("checkbox1")} />
+                                            <input type="checkbox" {...register("newsletter")} />
                                             <span>Yes, I want to receive Lottery Display emails</span>
                                         </label>
                                         <label className="flex items-center gap-2">
-                                            <input type="checkbox" {...register("checkbox2")} />
+                                            <input type="checkbox" {...register("agree")} />
                                             <span>
                                                 I agree to all the{" "}
                                                 <a href="#" className="text-blue-600 underline">
@@ -179,11 +182,14 @@ const Form2: FC = () => {
                                                 </a>{" "}
                                                 and <a href="#" className="text-blue-600 underline">Fees</a>
                                             </span>
-                                            <p className="text-red-600">{errors.checkbox2?.message}</p>
+                                            {errors.agree && <p className="text-red-600">{errors.agree?.message}</p>}
                                         </label>
                                     </div>
 
-                                    <button className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition">
+                                    <button
+                                        className="w-full bg-blue-600 text-white py-2 rounded font-medium hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                                        disabled={!isValid}
+                                    >
                                         Create Account
                                     </button>
 
