@@ -3,9 +3,12 @@ import AuthContext from '@/context';
 import { getTasksByAssignee } from '@/services';
 import type { Task } from '@/types';
 import SearchTasks from '@/components/SearchTask';
+import { useNavigate } from 'react-router';
 
 export default function AssigneeMePage() {
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const [tasks, setTasks] = useState([]);
 
@@ -27,6 +30,11 @@ export default function AssigneeMePage() {
 
         fetchTasks();
     }, [user]);
+
+    const handleOnEdit = (taskId: number) => {
+        // Logic to handle task edit
+        navigate(`/update-task/${taskId}`);
+    };
 
     const handleOnSearch = (filters: { status?: string; priority?: string }) => {
         // Logic to filter tasks based on status and priority
@@ -50,7 +58,7 @@ export default function AssigneeMePage() {
     });
 
     return (
-        <div className="p-5 flex flex-col gap-5 min-h-screen bg-gray-50 items-center justify-center">
+        <div className="p-5 flex flex-col gap-5 min-h-screen bg-gray-50 items-center">
             <SearchTasks onSearch={handleOnSearch} />
             <div className="w-full max-w-6xl bg-white rounded-xl shadow-lg p-8">
                 <div className="mb-6">
@@ -82,7 +90,7 @@ export default function AssigneeMePage() {
                                     <td className="px-4 py-2">{task.due_date ? new Date(task.due_date).toLocaleDateString() : ''}</td>
                                     <td className="px-4 py-2">{task.assignee_id}</td>
                                     <td className="px-4 py-2">
-                                        <button className="text-blue-600 hover:text-blue-800 font-medium rounded px-2 py-1 transition">Edit</button>
+                                        <button onClick={() => handleOnEdit(task?.id as any)} className="text-blue-600 hover:text-blue-800 font-medium rounded px-2 py-1 transition">Edit</button>
                                     </td>
                                 </tr>
                             ))}

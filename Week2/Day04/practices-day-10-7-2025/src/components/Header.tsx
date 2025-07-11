@@ -1,10 +1,11 @@
 import AuthContext from '@/context';
 import { User } from '@/types';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header() {
     const [user, setUser] = useState<User | null>(null);
+    const location = useLocation();
 
     useEffect(() => {
         // Load user from localStorage if available
@@ -36,17 +37,29 @@ export default function Header() {
                             </div>
                             <div className="flex space-x-1">
                                 <Link to="/tasks">
-                                    <h1 className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                                    <h1 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                                        ${location.pathname === "/tasks"
+                                            ? "bg-blue-600 text-white"
+                                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"}
+                                    `}>
                                         Task
                                     </h1>
                                 </Link>
                                 <Link to="/create">
-                                    <h1 className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                                    <h1 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                                        ${location.pathname === "/create"
+                                            ? "bg-blue-600 text-white"
+                                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"}
+                                    `}>
                                         Create Task
                                     </h1>
                                 </Link>
                                 <Link to="/assignee-me">
-                                    <h1 className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100">
+                                    <h1 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200
+                                        ${location.pathname === "/assignee-me"
+                                            ? "bg-blue-600 text-white"
+                                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"}
+                                    `}>
                                         Assigned to Me
                                     </h1>
                                 </Link>

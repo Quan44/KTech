@@ -169,7 +169,7 @@ const Form2: FC = () => {
                                     </div>
 
                                     <div className="space-y-2 text-sm">
-                                        <label className="flex items-center gap-2">
+                                        <label className="flex gap-2">
                                             <input type="checkbox" {...register("newsletter")} />
                                             <span>Yes, I want to receive Lottery Display emails</span>
                                         </label>
