@@ -55,3 +55,11 @@ export const getTasksByAssignee = async (assigneeId: number) => {
     });
     return response.json();
 };
+
+export const deleteTask = async (id: number) => {
+    const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
+        method: 'DELETE',
+        headers: defaultHeaders,
+    });
+    return response.json();
+};

@@ -74,7 +74,7 @@ export default function CreateTaskPage() {
     });
 
     const onSubmit: SubmitHandler<IFormInput> = async (data: any) => {
-        console.log('Form submitted:', data);
+        // console.log('Form submitted:', data);
         try {
             await createTask(data);
             navigate('/tasks');

@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { getTaskById, updateTask } from '@/services';
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams, useSearchParams } from 'react-router';
 import { useEffect } from 'react';
 
 interface IFormInput {
@@ -56,6 +56,8 @@ const schema: yup.ObjectSchema<IFormInput> = yup.object({
 export default function UpdateTaskPage() {
     const navigate = useNavigate();
     const { id } = useParams();
+    const [searchParams] = useSearchParams();
+    const fromPage = searchParams.get('from');
 
     const {
         register,
@@ -103,7 +105,12 @@ export default function UpdateTaskPage() {
     const onSubmit: SubmitHandler<IFormInput> = async (data: any) => {
         try {
             await updateTask(id ? parseInt(id) : 0, data);
-            navigate('/tasks');
+            // Navigate back to the appropriate page based on where user came from
+            if (fromPage === 'assignee-me') {
+                navigate('/assignee-me');
+            } else {
+                navigate('/tasks');
+            }
         } catch (error) {
             console.error('Error creating task:', error);
             alert('Failed to update task. Please try again.');
@@ -113,7 +120,7 @@ export default function UpdateTaskPage() {
     return (
         <div className="p-5 min-h-screen bg-gray-50 flex items-center justify-center">
             <div className="w-full max-w-6xl bg-white rounded-xl shadow-lg p-8">
-                <h2 className="text-3xl font-extrabold text-gray-800 mb-8">Create New Task</h2>
+                <h2 className="text-3xl font-extrabold text-gray-800 mb-8">Update Task</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     {/* Title */}
                     <div>

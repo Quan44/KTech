@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "@/components/Layout/Layout";
-import NoMatch from "@/pages/NoMatch/Page";
 import TaskPage from "./pages/Task/Page";
 import LoginPage from "./pages/Login/Page";
 import CreateTaskPage from "./pages/CreateTask/Page";
@@ -44,7 +43,6 @@ const App: FC = () => {
           <Route path="/Widget2" element={<Widget2 />} />
           <Route path="/Widget3" element={<Widget3 />} />
           <Route path="/Widget4" element={<Widget4 />} /> */}
-            <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>
       </AuthContext.Provider>
