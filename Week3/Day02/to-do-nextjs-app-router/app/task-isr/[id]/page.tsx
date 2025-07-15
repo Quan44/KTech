@@ -3,7 +3,7 @@ import { baseUrl, defaultHeaders } from '@/services/taskService';
 
 export const revalidate = 30;
 
-const getTasks = async (id: number) => {
+const getTasks = async (id: string) => {
     const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
         headers: defaultHeaders,
         next: { revalidate: 30 },
@@ -14,9 +14,10 @@ const getTasks = async (id: number) => {
     return response.json()
 }
 
-async function TaskISR({ params }: { params: { id: number } }) {
+async function TaskISR({ params }: { params: Promise<{ id: string }> }) {
 
-    const task = await getTasks(params.id);
+    const { id } = await params;
+    const task = await getTasks(id);
 
     return (
         <div className="p-5 flex flex-col gap-5 min-h-screen bg-gray-50 items-center">
