@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "@/components/Layout/DefaultLayout";
 import Home from "@/pages/Home/Page";
-import NoMatch from "@/pages/NoMatch/Page";
+import AccessDenied from "./pages/AccessDenied";
 // import Widget1 from "./pages/Widget1/page";
 // import Widget2 from "./pages/Widget2/page";
 // import Widget3 from "./pages/Widget3/page";
@@ -18,7 +18,7 @@ const App: FC = () => {
           <Route path="/Widget2" element={<Widget2 />} />
           <Route path="/Widget3" element={<Widget3 />} />
           <Route path="/Widget4" element={<Widget4 />} /> */}
-          <Route path="*" element={<NoMatch />} />
+          <Route path="*" element={<AccessDenied />} />
         </Route>
       </Routes>
     </>

@@ -101,18 +101,20 @@ export default function TaskPage() {
                                     <td className="px-4 py-2">{task.due_date ? new Date(task.due_date).toLocaleDateString() : ''}</td>
                                     <td className="px-4 py-2">{task.assignee_id}</td>
                                     <td className="px-4 py-2">
-                                        <button
-                                            onClick={() => handleOnEdit(task?.id as any)}
-                                            className="bg-blue-600 hover:bg-blue-800 text-white font-medium rounded px-2 py-1 transition"
-                                        >
-                                            Edit
-                                        </button>
-                                        <button
-                                            onClick={() => handleOnDelete(task?.id as any)}
-                                            className="bg-red-600 hover:bg-red-800 text-white font-medium rounded ml-2 px-2 py-1 transition"
-                                        >
-                                            Delete
-                                        </button>
+                                        <div className="flex gap-2">
+                                            <button
+                                                onClick={() => handleOnEdit(task?.id as any)}
+                                                className="bg-blue-600 hover:bg-blue-800 text-white font-medium rounded px-2 py-1 transition"
+                                            >
+                                                Edit
+                                            </button>
+                                            <button
+                                                onClick={() => handleOnDelete(task?.id as any)}
+                                                className="bg-red-600 hover:bg-red-800 text-white font-medium rounded px-2 py-1 transition"
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

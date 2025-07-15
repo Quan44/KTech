@@ -82,6 +82,7 @@ export default function RegistrationForm() {
         resolver: yupResolver(schema),
         mode: "onChange",
     })
+    
     const onSubmit = (data: FormData) => {
         console.log(data);
         reset();

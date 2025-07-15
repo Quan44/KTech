@@ -13,8 +13,14 @@ interface IFormInput {
 
 const schema = yup
     .object({
-        username: yup.string().email('Email is invalid').required('Email is required'),
-        password: yup.string().min(4, 'Password must be at least 4 characters').required('Password is required'),
+        username: yup
+            .string()
+            .email('Email is invalid')
+            .required('Email is required'),
+        password: yup
+            .string()
+            .min(4, 'Password must be at least 4 characters')
+            .required('Password is required'),
     })
     .required();
 
