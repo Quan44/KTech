@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { apiClient } from '../../lib/api-client';
 import { useAuthStore } from '../../useAuthStore';
 import { useNavigate } from 'react-router';
+import ButtonWithPermissions from '@/components/Auth/ButtonWithPermissions';
 
 export default function Tasks() {
     const { logOut, access_token, refresh_token, changeAccessToken, changeRefreshToken, loggedInUser } = useAuthStore((state) => state);
@@ -131,18 +132,25 @@ export default function Tasks() {
                                     <td className="px-4 py-2">{task.assignee_id}</td>
                                     <td className="px-4 py-2">
                                         <div className="flex gap-2">
-                                            <button
+                                            {/* <button
                                                 // onClick={() => handleOnEdit(task?.id as any)}
                                                 className="bg-blue-600 hover:bg-blue-800 text-white font-medium rounded px-2 py-1 transition"
                                             >
                                                 Edit
-                                            </button>
-                                            <button
+                                            </button> */}
+                                            <ButtonWithPermissions
+                                                permissions={['Administrators']}
+                                                className='bg-blue-600 hover:bg-blue-800 text-white font-medium rounded px-2 py-1 transition'
+                                            >
+                                                Edit
+                                            </ButtonWithPermissions>
+                                            <ButtonWithPermissions
+                                                permissions={['Administrators']}
                                                 // onClick={() => handleOnDelete(task?.id as any)}
                                                 className="bg-red-600 hover:bg-red-800 text-white font-medium rounded px-2 py-1 transition"
                                             >
                                                 Delete
-                                            </button>
+                                            </ButtonWithPermissions>
                                         </div>
                                     </td>
                                 </tr>
